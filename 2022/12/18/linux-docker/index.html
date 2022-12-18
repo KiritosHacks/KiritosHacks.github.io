@@ -102,12 +102,12 @@ Docker安装以及使用 |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
         </ul>
       </div>
     </header>
@@ -199,13 +199,7 @@ docker images nginx
 # 修改镜像tag
 docker tag nginx:latest  new_nginx:new_tag
 
-# 运行镜像，生成容器
-# 命令解读：
-# -d:以后台守护线程运行
-# --name:容器命名
-# -p 80:80 : 映射端口，容器内部80端口映射到服务器80端口
-# nginx ：指定的镜像（可以通过docker images 查看）
-docker run -d --name nginx -p 80:80 nginx(镜像ID或者镜像名字都可以)
+
 
 #查看容器
 docker ps 
@@ -220,6 +214,20 @@ docker stop [OPTIONS] Container [Container …]
 docker rm contentid
 
 </code></pre>
+<h2 id="docker-运行nginx镜像"><a class="markdownIt-Anchor" href="#docker-运行nginx镜像">#</a> Docker 运行 nginx 镜像</h2>
+<p>由于我的服务器对外开放的是 80 端口 因此 nginx 服务映射到 80 端口</p>
+<pre><code>docker run -d --name nginx-content -p 80:80 nginx
+# 运行镜像，生成容器
+# 命令解读：
+# -d:以后台守护线程运行
+# --name:容器命名
+# -p 80:80 : 映射端口，容器内部80端口映射到服务器80端口
+# nginx ：指定的镜像（可以通过docker images 查看）
+docker run -d --name nginx -p 80:80 nginx(镜像ID或者镜像名字都可以)
+</code></pre>
+<p>在浏览器输入 ip:80  或者使用 postman 测试<br>
+<strong>出现下图就代表成功啦！</strong></p>
+<p><img data-src="./images/nginx-example.jpg" alt></p>
 
       <div class="tags">
           <a href="/tags/linux/" rel="tag"><i class="ic i-tag"></i> linux</a>
@@ -235,7 +243,7 @@ docker rm contentid
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-12-18 16:28:52" itemprop="dateModified" datetime="2022-12-18T16:28:52+08:00">2022-12-18</time>
+    <time title="修改时间：2022-12-18 16:39:24" itemprop="dateModified" datetime="2022-12-18T16:39:24+08:00">2022-12-18</time>
   </span>
 </div>
 
@@ -290,7 +298,7 @@ docker rm contentid
     <div class="item left">
       
 
-  <a href="/2022/12/17/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicljgocqbj20zk0m8e81.jpg" title="Hello World">
+  <a href="/2022/12/17/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeun65urj20zk0m81ii.jpg" title="Hello World">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>Hello World</h3>
@@ -314,7 +322,7 @@ docker rm contentid
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text"> 准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text"> 操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker"><span class="toc-number">2.1.</span> <span class="toc-text"> 安装 Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dokcer%E4%BD%BF%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text"> Dokcer 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%90%86-docker-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 管理 Docker 守护进程:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8docker%E6%8B%89%E5%8F%96nginx"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 使用 Docker 拉取 nginx</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text"> 准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text"> 操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker"><span class="toc-number">2.1.</span> <span class="toc-text"> 安装 Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dokcer%E4%BD%BF%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text"> Dokcer 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%90%86-docker-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 管理 Docker 守护进程:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8docker%E6%8B%89%E5%8F%96nginx"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 使用 Docker 拉取 nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-%E8%BF%90%E8%A1%8Cnginx%E9%95%9C%E5%83%8F"><span class="toc-number">2.3.</span> <span class="toc-text"> Docker 运行 nginx 镜像</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
